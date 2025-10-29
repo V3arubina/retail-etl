@@ -1,0 +1,5 @@
+python-dotenv==1.0.1
+pandas==2.2.3
+psycopg[binary]==3.2.10
+pyyaml==6.0.2
+
