@@ -1,0 +1,8 @@
+SHELL=/bin/zsh
+BASE=/Users/apple/Downloads/retail-etl
+PY=${BASE}/.venv/bin/python
+LOG=${BASE}/logs
+PYTHONDONTWRITEBYTECODE=1
+
+5 7 * * 1-6  cd $BASE && $PY -B src/generate_exports.py >> $LOG/cron_generate.out 2>&1
+14 7 * * 1-6 cd $BASE && $PY -B src/load_to_db_postgres.py >> $LOG/cron_load.out 2>&1
